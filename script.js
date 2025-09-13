@@ -1,4 +1,4 @@
-// Set your target date here (YYYY-MM-DD HH:MM:SS format)
+// Set your target date here (2025-10-12 HH:MM:SS format)
 const targetDate = new Date("2025-12-31T23:59:59");
 
 function updateCountdown() {
