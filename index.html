@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Đếm ngược ngày đi Huế</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1 style="text-align:center;">Đếm ngược ngày đi Huế</h1>
-  <div class="countdown-container" style="display:flex; justify-content:center; gap:24px; margin-bottom:30px;">
-    <!-- Countdown timer boxes here -->
-    <div class="countdown-box">28 Ngày</div>
-    <div class="countdown-box">10 Giờ</div>
-    <div class="countdown-box">58 Phút</div>
-    <div class="countdown-box">2 Giây</div>
-  </div>
-  
-  <!-- Images under countdown -->
-  <div class="images-under-countdown" style="text-align:center; margin-top:10px;">
-    <img src="dy vẽ.jpg" alt="dy vẽ" style="max-width:300px; margin:10px; border-radius:10px;">
-    <img src="hy vẽ.jpg" alt="hy vẽ" style="max-width:300px; margin:10px; border-radius:10px;">
-  </div>
+    <div class="container">
+        <h1>Countdown to Event</h1>
+        <div class="images">
+            <img src="img1.jpg" alt="Image 1">
+            <img src="img2.jpg" alt="Image 2">
+        </div>
+        <div id="countdown">
+            <div><span id="days">00</span><label>Days</label></div>
+            <div><span id="hours">00</span><label>Hours</label></div>
+            <div><span id="minutes">00</span><label>Minutes</label></div>
+            <div><span id="seconds">00</span><label>Seconds</label></div>
+        </div>
+        <p id="message"></p>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
