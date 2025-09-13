@@ -1,38 +1,28 @@
-// Target date: 12th October 2025, 00:00:00
-const targetDate = new Date('2025-10-12T00:00:00Z');
+// Set your target date here (YYYY-MM-DD HH:MM:SS format)
+const targetDate = new Date("2025-12-31T23:59:59");
 
 function updateCountdown() {
-  const now = new Date();
-  let diff = Math.floor((targetDate - now) / 1000);
+    const now = new Date();
+    const diff = targetDate - now;
 
-  if (diff < 0) diff = 0;
+    if (diff <= 0) {
+        document.getElementById('countdown').style.display = 'none';
+        document.getElementById('message').textContent = "The event has started!";
+        return;
+    }
 
-  const days = Math.floor(diff / (3600 * 24));
-  const hours = Math.floor((diff % (3600 * 24)) / 3600);
-  const minutes = Math.floor((diff % 3600) / 60);
-  const seconds = diff % 60;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
 
-  document.getElementById('days').textContent = days;
-  document.getElementById('hours').textContent = hours;
-  document.getElementById('minutes').textContent = minutes;
-  document.getElementById('seconds').textContent = seconds;
+    document.getElementById('days').textContent = String(days).padStart(2, '0');
+    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 }
 
+// Initial call
 updateCountdown();
+// Update every second
 setInterval(updateCountdown, 1000);
-.countdown-box {
-  background: #333;
-  color: #fff;
-  font-size: 2rem;
-  padding: 20px 40px;
-  border-radius: 12px;
-  display: inline-block;
-  margin: 0 5px;
-}
-
-.images-under-countdown img {
-  max-width: 300px;
-  margin: 10px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.20);
-}
