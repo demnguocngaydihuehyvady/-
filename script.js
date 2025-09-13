@@ -20,3 +20,19 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+.countdown-box {
+  background: #333;
+  color: #fff;
+  font-size: 2rem;
+  padding: 20px 40px;
+  border-radius: 12px;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.images-under-countdown img {
+  max-width: 300px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.20);
+}
